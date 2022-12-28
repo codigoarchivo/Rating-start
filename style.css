@@ -1,0 +1,99 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+.container {
+  padding: 2rem;
+  background-color: #eee;
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+    0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+  border-radius: 10px;
+  text-align: center;
+}
+#rating > input {
+  display: none;
+}
+
+#rating > label::before {
+  content: "\f005";
+  cursor: pointer;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: -webkit-xxx-large;
+  font-size: 1.5rem;
+  margin: 5px;
+}
+
+#rating > .half::before {
+  content: "\f089";
+  position: absolute;
+  font-size: -webkit-xxx-large;
+}
+
+#rating > label {
+  color: #ddd;
+  float: right;
+  transition: 0.3s all;
+}
+
+#rating > input:checked ~ label,
+#rating:not(:checked) > label:hover,
+#rating:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+
+.rating-value {
+  font-size: -webkit-xxx-large;
+}
+.animate {
+  animation: stretch-bounce 0.5s ease-in-out;
+  -webkit-animation: stretch-bounce 0.5s ease-in-out;
+}
+
+@-webkit-keyframes stretch-bounce {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes stretch-bounce {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
